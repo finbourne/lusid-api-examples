@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "a7a37763-9ca7-4013-a580-6e9ae9e84c16",
+		"name": "LUSID Okta Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate with Okta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "grant_type=password&username={{username}}&password={{password}}&scope=openid client groups&client_id={{clientId}}&client_secret={{clientSecret}}"
+				},
+				"url": {
+					"raw": "https://lusid.okta.com/oauth2/aus5al5yopbHW2wJn2p6/v1/token",
+					"protocol": "https",
+					"host": [
+						"lusid",
+						"okta",
+						"com"
+					],
+					"path": [
+						"oauth2",
+						"aus5al5yopbHW2wJn2p6",
+						"v1",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "86e78a85-5869-4b79-80be-4d025fe950f6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b8f08dfc-5c7c-4ac7-b847-481f37c23c0b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "4fa964a8-a5fa-40aa-a34a-4851aae86e31",
+			"key": "username",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "df6e485c-0d9a-4b4a-96c3-56ad04cda34c",
+			"key": "password",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "c9644269-cc5d-4dda-8ee7-32a422f42c74",
+			"key": "clientId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "3504b592-03c0-4f78-868e-d94910f6ff74",
+			"key": "clientSecret",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "42d086a5-4a4e-4048-8c97-42841b3e90d7",
+		"name": "LUSID API Examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create transaction portfolio",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "text/plain"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"displayName\": \"{{displayName}}\",\n  \"code\": \"{{portfolioCode}}\",\n  \"baseCurrency\": \"GBP\",\n  \"created\": \"2019-06-10T08:00:00.000Z\"\n}"
+				},
+				"url": {
+					"raw": "https://api.lusid.com/api/transactionportfolios/{{scope}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"lusid",
+						"com"
+					],
+					"path": [
+						"api",
+						"transactionportfolios",
+						"{{scope}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create instruments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"request_id_1\": {\n    \"name\": \"VODAFONE GROUP PLC\",\n    \"identifiers\": {\n      \"Figi\": {\n        \"value\": \"BBG000C6K6G9\"\n      }\n    }\n  },\n  \"request_id_2\": {\n    \"name\": \"BARCLAYS PLC\",\n    \"identifiers\": {\n      \"Figi\": {\n        \"value\": \"BBG000C04D57\"\n      }\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "https://api.lusid.com/api/instruments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"lusid",
+						"com"
+					],
+					"path": [
+						"api",
+						"instruments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set holdings",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"instrumentIdentifiers\": {\n      \"Instrument/default/Currency\": \"GBP\"\n    },\n    \"taxLots\": [\n      {\n        \"units\": 100000\n      }\n    ]\n  },\n  {\n    \"instrumentIdentifiers\": {\n      \"Instrument/default/Figi\": \"BBG000C6K6G9\"\n    },\n    \"taxLots\": [\n      {\n        \"units\": 100,\n        \"cost\": {\n          \"amount\": 10000,\n          \"currency\": \"GBP\"\n        },\n        \"portfolioCost\": 10100,\n        \"price\": 101,\n        \"purchaseDate\": \"2019-06-10T08:00:00.000Z\",\n        \"settlementDate\": \"2019-06-10T08:00:00.000Z\"\n      }\n    ]\n  },\n  {\n    \"instrumentIdentifiers\": {\n      \"Instrument/default/Figi\": \"BBG000C04D57\"\n    },\n    \"taxLots\": [\n      {\n        \"units\": 100,\n        \"cost\": {\n          \"amount\": 10000,\n          \"currency\": \"GBP\"\n        },\n        \"portfolioCost\": 10200,\n        \"price\": 102,\n        \"purchaseDate\": \"2019-06-10T08:00:00.000Z\",\n        \"settlementDate\": \"2019-06-10T08:00:00.000Z\"\n      }\n    ]\n  }\n]"
+				},
+				"url": {
+					"raw": "https://api.lusid.com/api/transactionportfolios/{{scope}}/{{portfolioCode}}/holdings/2019-06-10T08%3A00%3A00.000Z",
+					"protocol": "https",
+					"host": [
+						"api",
+						"lusid",
+						"com"
+					],
+					"path": [
+						"api",
+						"transactionportfolios",
+						"{{scope}}",
+						"{{portfolioCode}}",
+						"holdings",
+						"2019-06-10T08%3A00%3A00.000Z"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get holdings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.lusid.com/api/transactionportfolios/{{scope}}/{{portfolioCode}}/holdings",
+					"protocol": "https",
+					"host": [
+						"api",
+						"lusid",
+						"com"
+					],
+					"path": [
+						"api",
+						"transactionportfolios",
+						"{{scope}}",
+						"{{portfolioCode}}",
+						"holdings"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d944165e-c235-48f6-b83e-9ca099a6f1fa",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "48b8bbce-769d-4ba0-912c-5736afe8a4b8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "cb7300c9-f14c-40dc-bcfe-8f89fc825246",
+			"key": "scope",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "282d00ba-4c0f-4b71-9ac1-41cd5b680b7b",
+			"key": "portfolioCode",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "597fb933-4d46-45a8-be82-150e042753be",
+			"key": "displayName",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
