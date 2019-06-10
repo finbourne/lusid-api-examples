@@ -153,6 +153,81 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Search instruments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"key\": \"Instrument/default/Isin\",\n\t\t\"value\": \"HK0017000149\"\n\t}\n]"
+				},
+				"url": {
+					"raw": "https://api.lusid.com/api/search/instruments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"lusid",
+						"com"
+					],
+					"path": [
+						"api",
+						"search",
+						"instruments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all instruments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://api.lusid.com/api/instruments?limit=100&filter=State%20eq%20'Active'",
+					"protocol": "https",
+					"host": [
+						"api",
+						"lusid",
+						"com"
+					],
+					"path": [
+						"api",
+						"instruments"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "100"
+						},
+						{
+							"key": "filter",
+							"value": "State%20eq%20'Active'"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {
@@ -189,19 +264,19 @@
 	],
 	"variable": [
 		{
-			"id": "cb7300c9-f14c-40dc-bcfe-8f89fc825246",
+			"id": "18d2e4e9-d762-4c45-b645-f2cf0a3fbf11",
 			"key": "scope",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "282d00ba-4c0f-4b71-9ac1-41cd5b680b7b",
+			"id": "06da0010-d88d-4a8d-92d7-0fdff58b2f50",
 			"key": "portfolioCode",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "597fb933-4d46-45a8-be82-150e042753be",
+			"id": "32e55f6e-0b5b-4d5c-9635-636400af7aae",
 			"key": "displayName",
 			"value": "",
 			"type": "string"
