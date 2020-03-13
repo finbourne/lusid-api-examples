@@ -1,3 +1,5 @@
+![LUSID_by_Finbourne](https://content.finbourne.com/LUSID_repo.png)
+
 # Pre-requisites
 
 The following are required to run the examples contained within this repository:
