@@ -1,4 +1,5 @@
 ![LUSID_by_Finbourne](https://content.finbourne.com/LUSID_repo.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffinbourne%2Flusid-api-examples.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffinbourne%2Flusid-api-examples?ref=badge_shield)
 
 # Pre-requisites
 
@@ -31,3 +32,7 @@ Edit the collection details and on the `Authorization` tab set the type to be `B
 Setting the access token:
 
 <img src="img/edit-auth.png" width="600">
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffinbourne%2Flusid-api-examples.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffinbourne%2Flusid-api-examples?ref=badge_large)
